@@ -2,10 +2,14 @@
   <h1>Best quotes</h1>
   <hr>
   <ul>
-      <li *ngFor='let quote of quotes'>
-        {{quote.name}}
-        <app-quote-detail [quote]='quote'></app-quote-detail>
+       <div *ngFor='let quote of quotes;let i = index'>
+        <li>{{quote.name}}</li>
 
-      </li>
+        <button (click)='toggleDetails(i)'>Toggle Details</button>
+        <app-quote-detail *ngIf='quote.showDescription' [quote]='quote'></app-quote-detail>
+
+      </div>
   </ul>
+  <p *ngIf='quotes.length > 4'>You have too many best quotes</p>
+
 </div>
