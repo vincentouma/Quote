@@ -16,6 +16,13 @@ export class QuoteComponent implements OnInit {
     new Quote(6,'Plot my world domination plan','Cause I am an evil overlord', new Date(2019,7,15)),
     ];
 
+    addNewGoal(quote){
+    let quoteLength = this.quotes.length;
+    quote.id = quoteLength+1;
+    quote.completeDate = new Date(quote.completeDate)
+    this.quotes.push(quote)
+  }
+
     toggleDetails(index){
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
   }
