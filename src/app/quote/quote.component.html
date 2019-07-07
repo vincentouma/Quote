@@ -1,14 +1,20 @@
-<div>
-  <h1>Best quotes</h1>
+<div class="container">
+  <h1>Best Quotes</h1>
   <hr>
-  <ul>
-       <div *ngFor='let quote of quotes;let i = index'>
-        <li appStrikethrough>{{quote.name}}posted on{{quote.completeDate|date|uppercase}}</li>
 
-        <button (click)='toggleDetails(i)'>Toggle Details</button>
-        <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete) = 'completeQuote($event,i)'></app-quote-detail>
+  <div class="row">
+    <div class="col-md-6">
+      <div *ngFor='let quote of quotes;let i = index'>
+        <div>
+          <h4 id={{i}} appStrikethrough>{{quote.name}} due on {{quote.completeDate|date|uppercase}}</h4>
+          <button (click)='toggleDetails(i)' class="btn btn-primary">Quote</button>
+        </div>
 
+        <div *ngIf='quote.showDescription'>
+          <app-quote-detail  [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quote-detail>
+        </div>
       </div>
-  </ul>
-  <p *ngIf='quotes.length > 4'>You have too many best quotes</p>
-</div>
+    </div>
+  </div>
+
+  <p *ngIf='quotes.length > 5'>Your quotes exceed the maximu</p>
