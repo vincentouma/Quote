@@ -1,35 +1,35 @@
 <div style="text-align:center">
-    <h1>
-      Welcome to the jungle of wisdom{{ title }}!
-    </h1>
-    <p>True Growth require wise inspiration.</p>
+  <h1>
+    Welcome to the jungle of wisdom{{ title }}!
+  </h1>
+  <p>True Growth require wise inspiration.</p>
 
-    </div>
+</div>
 
 <hr>
 <div class="container">
 
-<div id=quot>
-<h2>Best Quotes</h2>
-  <div class="row">
-    <div class="col-md-6">
-      <div *ngFor='let quote of quotes;let i = index'>
-        <div>
-          <h4 id={{i}} appStrikethrough>{{quote.name}}, Published on {{quote.completeDate|date|uppercase}}</h4>
-          <button (click)='toggleDetails(i)' class="btn btn-primary">Quote</button>
-        </div>
+  <div id=quot>
+    <h2>Best Quotes</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div *ngFor='let quote of quotes;let i = index'>
+          <div>
+            <h4 id={{i}} appStrikethrough>{{quote.name}}, Published on {{quote.completeDate|date|uppercase}}</h4>
+            <button (click)='toggleDetails(i)' class="btn btn-primary">Quote</button>
+          </div>
 
-        <div *ngIf='quote.showDescription'>
-          <app-quote-detail  [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quote-detail>
+          <div *ngIf='quote.showDescription'>
+            <app-quote-detail [quote]='quote' (isComplete)='deleteQuote($event,i)'></app-quote-detail>
+          </div>
         </div>
       </div>
+      <div class="col-md-6">
+        <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+      </div>
+      <!-- <p><app-vote></app-vote></p> -->
     </div>
-    <div class="col-md-6">
-      <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
-    </div>
-    <!-- <p><app-vote></app-vote></p> -->
-  </div>
 
-  <p *ngIf='quotes.length > 5'>Your quotes exceed the maximum</p>
+    <p *ngIf='quotes.length > 5'>Your quotes exceed the maximum</p>
   </div>
 </div>
