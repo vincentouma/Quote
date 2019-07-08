@@ -40,7 +40,7 @@ export class QuoteComponent implements OnInit {
    this.vote=this.vote+=1;
  }
  clickdownVote(){
-   this.dvotee=this.dnvote+=1;
+   this.vote=this.vote+=1;
  }
 
   deleteQuote(isComplete, index){
