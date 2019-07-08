@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import "~bootstrap/dist/css/bootstrap.css" */
+body{
+  background-image: url('src/assets/backgrpundimg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.Form{
+  box-sizing: border-box;
+  border :2 px solid black;
+
+}
+p,h4{
+  font-family: 'Courgette', cursive;
+}
+h1,h2,h3,input{
+  font-family: 'Acme', sans-serif;
+}
+#qoute{
+  boder:4px solid black;
+}
+h1{
+  color:black
+}

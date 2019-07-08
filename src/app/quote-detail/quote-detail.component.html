@@ -1,5 +1,8 @@
+<div class="form" >
 <p>
   {{quote.description}}
 </p>
-<p>This quote was posted on {{quote.completeDate|dateCount}} days ago</p>
-<button (click)= 'quoteDelete(true)' class= "btn btn-outline-danger">Delete Quote</button>
+<p>This quote was published {{quote.completeDate|dateCount}} days ago</p>
+<app-vote></app-vote>
+<button (click)= 'quoteDelete(true)' class= "btn btn-outline-danger delete">Delete Quote</button>
+</div>
