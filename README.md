@@ -31,8 +31,7 @@ Vincent Ouma
 
 ## Description
 
-This an angular app that enable user to post his/her favorite quotes and delete the quote if user chooses to ,it also allow user to vote for other quotes posted by other users.The app also shows the author of the quote and the day the quote was posted..
-
+This an angular app that enable user to post his/her favorite quotes and delete the quote if user chooses to ,it also allow user to vote for other quotes posted by other users.The app also shows the author of the quote and the day the quote was posted.
 
 
 ## Known Bugs
